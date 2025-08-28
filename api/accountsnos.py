@@ -38,6 +38,7 @@ print (Fore.YELLOW + "")
 
 
 uid = input("Введите UID AKKAYHTA>")
+video = input("Введите POST ID Видео>")
 x_auth_token = input("TOKEN>")
 
 
@@ -59,24 +60,27 @@ device_id = ''.join(secrets.choice(string.hexdigits.lower()) for _ in range(40))
 
 #hello
 data1 = {
-  "language": "ru",
-  "id": "46000",
-  "reason": "Нарушение требований к биографии",
-  "tagId": "",
-  "tagName": "",
-  "reportedId": uid,
-  "dataJson": "{\"description\":\"\",\"attachments\":[]}"
+    "deviceId": device_id,
+    "language": "ru",
+    "id": "42003",
+    "reason": "Оскорбительный или издевающийся",
+    "tagId": "1008",
+    "tagName": "Насмешки/недружелюбие",
+    "reportedId": uid,
+    "dataJson": f'{{"description":"Насмехаются и обзываются, называют клоунами.","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/9uL/2LeFlM_4.jpg?crc=2062572096&type=40"}}]}}'
 }
 
 data2 = {
-  "language": "ru",
-  "id": "44000",
-  "reason": "Нарушение, связанное с аватаром",
-  "tagId": "",
-  "tagName": "",
-  "reportedId": uid,
-  "dataJson": "{\"description\":\"\",\"attachments\":[]}"
+    "deviceId": "30b547bcff21dd572aa81e032c773ec11be2eeeb",
+    "language": "ru",
+    "id": "42009",
+    "reason": "Запрещённые предметы",
+    "tagId": "1025",
+    "tagName": "Огнестрельное оружие/ножи",
+    "reportedId": uid,
+    "dataJson": f'{{"description":"","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/9uz/1tUXK000m0oLhES1kbrBQ_4.jpg?crc=2062572096&type=40"}}]}}'
 }
+
 
 data3 = {
     "language": "ru",
@@ -99,6 +103,18 @@ data4 = {
     "reportedId": uid,
     "dataJson": json.dumps(data_json, ensure_ascii=False)
 }
+
+data5 = {
+  "deviceId": "30b547bcff21dd572aa81e032c773ec11be2eeeb",
+  "language": "ru",
+  "id": "42006",
+  "reason": "Порнография или нагота",
+  "tagId": "",
+  "tagName": "",
+  "reportedId": uid,
+  "dataJson": f'{{"description":"порногорафия в видео.","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/2uz/1unIFw00m4bSmrU1B41zt_4.jpg?crc=2062572096&type=40"}}]}}'
+}
+
 
 #help
 
@@ -130,6 +146,7 @@ time.sleep(1)
 res = requests.post(url, data=json.dumps(data4), headers=headers)
 print (res.text)
 time.sleep(1)
+res = requests.post(url, data=json.dumps(data5), headers=headers)
 print ("Все жалобы отправлены!!!")
 print ("")
 

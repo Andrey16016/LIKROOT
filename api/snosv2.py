@@ -104,7 +104,7 @@ data2 = {
   "tagId": "",
   "tagName": "",
   "reportedId": video,
-  "dataJson": "{\"description\":\"В видео показано порно с несовершеннолетними детьми!\",\"attachments\":[]}"
+  "dataJson": f'{{"description":"порногорафия в видео.","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/2uz/1unIFw00m4bSmrU1B41zt_4.jpg?crc=2062572096&type=40"}}]}}'
 }
 
 
@@ -117,7 +117,7 @@ data3 = {
   "tagId": "",
   "tagName": "",
   "reportedId": video,
-  "dataJson": "{\"description\":\"В видео показаны наркотики, оружие, расчлененка, ножи.\",\"attachments\":[]}"
+  "dataJson": f'{{"description":"","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/9uz/1tUXK000m0oLhES1kbrBQ_4.jpg?crc=2062572096&type=40"}}]}}'
 }
 
 data4 = {
@@ -150,7 +150,7 @@ data6 = {
   "tagId": "",
   "tagName": "",
   "reportedId": video,
-  "dataJson": "{\"description\":\"Оскорбления в сторону людей, примите меры!\",\"attachments\":[]}"
+  "dataJson": f'{{"description":"Насмехаются и обзываются, называют клоунами.","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/9uL/2LeFlM_4.jpg?crc=2062572096&type=40"}}]}}'
 }
 
 

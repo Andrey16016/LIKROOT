@@ -5,6 +5,7 @@ import random
 import os
 import colorama
 from colorama import Fore
+import base64
 
 
 os.system("clear")
@@ -21,16 +22,41 @@ body = """
 ▄█ █░▀█ █▄█ ▄█
 """
 
-#user = "3"
+
 print (Fore.YELLOW + body)
+menu = """
+1) {+} Сгенерировать жалобу
+2) {+} Base64 жалоба
+"""
 
-#password = input("[=]Пароль:")
-
+r = input("Выбирай>")
+if r == "2":
+    user = input("Нажмите Enter для генерации жалобы")
+    print ("Генерация жалобы...")
+    print ("")
+    print ("")
+    print ("ИНСТРУКЦИИ УДАЛЕНЫ, ТАК КАК ЖАЛОБА ПОДБИРАЕТСЯ НА РАНДОМ")
+    
+    
+    with open("suport.txt", 'r', encoding='utf-8') as f:
+        texts = f.readlines()
+    suport = (random.choice(texts).strip())
+    my_string = (suport)
+    string_bytes = my_string.encode('utf-8')
+    base64_bytes = base64.b64encode(string_bytes)
+    base64_string = base64_bytes.decode('utf-8')
+    print (base64_string)
+    print ("")
+    i = input("Нажмите enter")
+    os.system("clear")
+    #ok
+    os.system("python3 LIKROOT.py")
+    
 
 user = input("Нажмите Enter для генерации жалобы")
 print ("Генерация жалобы...")
 time.sleep(1)
-#us = random.randint(1, 5)
+
 os.system("clear")
 
 print ("")
@@ -42,8 +68,8 @@ with open("suport.txt", 'r', encoding='utf-8') as f:
     texts = f.readlines()
 suport = (random.choice(texts).strip())
 
-print ("ИНСТРУКЦИЯ")
-print ("Зайти на профиль и Выбрать Жалоба + Нарушение в видео + Прочее + В Описание вставить текст который ниже")
+print ("ИНСТРУКЦИИ УДАЛЕНЫ, ТАК КАК ЖАЛОБА ПОДБИРАЕТСЯ НА РАНДОМ")
+#print ("Зайти на профиль и Выбрать Жалоба + Нарушение в видео + Прочее + В Описание вставить текст который ниже")
 
 #text = (f"{suport.format(username=username)}")
 

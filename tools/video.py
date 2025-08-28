@@ -3,7 +3,10 @@ print ("")
 headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
 
 
-
+logo = """
+█░█ █ █▀▄ █▀▀ █▀█ █ █▄░█ █▀▀ █▀█
+▀▄▀ █ █▄▀ ██▄ █▄█ █ █░▀█ █▀░ █▄█
+"""
 
 import time
 import requests
@@ -16,7 +19,8 @@ colorama.init()
 
 os.system("clear")
 print ("")
-
+print (logo)
+print ("")
 logo = """
 {+} Ищет информацию о видео по URL
 Введите ссылку на видео ниже!

