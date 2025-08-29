@@ -64,7 +64,7 @@ else:
     info = f"""
     [+] Запуск атаки на <{share_nick}>
     [+] ID видео {share_post}
-    [+] 60 Жалоб
+    [+] 7 Жалоб
     """
     print (Fore.GREEN + info)
     

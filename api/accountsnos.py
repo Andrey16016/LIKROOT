@@ -3,6 +3,7 @@ import os
 os.system("clear")
 print ("")
 
+import re
 import requests
 import random
 import string
@@ -14,6 +15,7 @@ from colorama import Fore
 
 colorama.init()
 
+headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
 
 
 valid = '{"code":0,"data":{"success":true,"receipt":null},"message":"ok"}'
@@ -37,9 +39,28 @@ print (Fore.BLUE + logo)
 print (Fore.YELLOW + "")
 
 
-uid = input("Введите UID AKKAYHTA>")
-video = input("Введите POST ID Видео>")
+urlv = input("URL VIDEO>")
+print (f"Запуск сноса...")
+line = requests.get(urlv, headers=headers)
+code_example = (line.text)
+match_post = re.search(r'"post_id":\s*"([^"]*)"', code_example)
+match_nick = re.search(r'"nick_name":\s*"([^"]*)"', code_example)
+match_uid = re.search(r'"poster_uid":\s*"([^"]*)"', code_example)
+share_post = match_post.group(1)
+share_nick = match_nick.group(1)
+share_uid = match_uid.group(1)
+video = (share_post)
+uid = (share_uid)
+info = f"""
+    [+] Запуск атаки на <{share_nick}>
+    [+] ID видео {share_post}
+    [+] 7 Жалоб
+"""
+print (Fore.GREEN + info)
+
+
 x_auth_token = input("TOKEN>")
+
 
 
 

