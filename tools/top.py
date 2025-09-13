@@ -1,0 +1,87 @@
+#Developer RESHETKA
+user_agent = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3"
+
+#import time
+import requests
+import colorama
+from colorama import Fore
+import os
+import re
+import json
+
+
+logo = """
+┏━━━┳━━━┳┓┏━┳━━━┳━┓┏━┳━━━┳━┓╋┏┳━━━┓
+┃┏━┓┃┏━━┫┃┃┏┫┏━┓┃┃┗┛┃┃┏━━┫┃┗┓┃┣┓┏┓┃
+┃┗━┛┃┗━━┫┗┛┛┃┃╋┃┃┏┓┏┓┃┗━━┫┏┓┗┛┃┃┃┃┃
+┃┏┓┏┫┏━━┫┏┓┃┃┃╋┃┃┃┃┃┃┃┏━━┫┃┗┓┃┃┃┃┃┃
+┃┃┃┗┫┗━━┫┃┃┗┫┗━┛┃┃┃┃┃┃┗━━┫┃╋┃┃┣┛┗┛┃
+┗┛┗━┻━━━┻┛┗━┻━━━┻┛┗┛┗┻━━━┻┛╋┗━┻━━━┛
+"""
+
+os.system("clear")
+print ("")
+print (Fore.GREEN + logo)
+print ("")
+text = """
+[+] ПРИНЦИП РАБОТЫ РЕКОМЕНДАЦИЙ:
+
+[=] ПРОСМОТР ВИДЕО ДО КОНЦА.
+[=] ВЗАИМОДЕЙСТВИЕ С ВИДЕО. (ПФ)
+
+[=] ПОКАЗ 5-15 СЛЕДУЮЩИМ ПОЛЬЗОВАТЕЛЯМ.
+"""
+
+mn = '''
+1) Получить популярные hasg теги
+2) Выход
+'''
+
+
+print (Fore.YELLOW + text)
+print ("")
+#print (
+
+print (mn)
+us = input("[=] Выбирай>")
+if us == "2":
+    os.system("clear")
+    os.system("python3 LIKROOT.py")
+    exit()
+
+
+tagss = input("{+} Кол-во HESHTAG>")
+
+
+url = "https://api.like-video.com/likee-activity-flow-micro/RecommendApi/getRecommendHashtag"
+
+headers = {
+    "Content-Type": "application/json"
+}
+
+data = {
+    "language": "en",
+    "page": 1,
+    "pagesize": tagss,
+    "country": "RU"
+}
+
+res = requests.post(url, json=data, headers=headers)
+code_example = (res.text)
+matches = re.findall(r'"tagName":\s*"([^"]*)"', code_example)
+
+for match in matches:
+    print(f"#{match}")
+
+print ("")
+input("Нажмите Enter")
+os.system("reset")
+os.system("python3 LIKROOT.py")
+exit()
+
+
+
+
+
+
+
