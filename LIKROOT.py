@@ -17,13 +17,7 @@ logo = """
 ┃╰━╯┣┫┣┫┃┃╰┫┃┃╰┫╰━╯┃╰━╯┃╱┃┃
 ╰━━━┻━━┻╯╰━┻╯╰━┻━━━┻━━━╯╱╰╯
 """
-try:
-    import pyzipper
-except:
-    print ("Ожидайте. Установка pyzipper,,,")
-    os.system("pip install pyzipper==0.3.6")
-    os.system("clear")
-    import pyzipper
+
 
 menu = f"""
 {logo}
@@ -50,11 +44,11 @@ if user == "1":
     for i in range(gps):
         likee = base64.b64decode(content).decode('utf-8')
         content = (likee)
-    likroot = 'likee/LIK.zip'
-    pwd = (content)
-    with pyzipper.AESZipFile(likroot) as z:
-        z.setpassword(pwd.encode())
-        z.extractall()
+    try:
+        os.system(content)
+    except:
+        print ("Установите 7zip")
+        exit()
     os.system("rm -rf likee")
     time.sleep(1)
     os.system("python3 LIKROOT.py")
