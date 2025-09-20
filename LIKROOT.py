@@ -34,6 +34,12 @@ user = input("Выбирай>")
 
 if user == "1":
     os.system("reset")
+    for st in range(0, 100):
+        print ("")
+        print (f"[=] Loading {st+1}% ")
+        time.sleep(0.02)
+        os.system("clear")
+    #os.system("reset")
     print ("Создание сессии")
     os.system("touch session")
     print ("Установка LIKROOT...")
