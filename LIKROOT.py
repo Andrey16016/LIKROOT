@@ -15,11 +15,12 @@ logo = """
 import time
 import requests
 import colorama
-from colorama import Fore
+from colorama import Fore, Style
 import os
 
 
 colorama.init()
+print (Style.BRIGHT + "")
 os.system("reset")
 print (Fore.YELLOW + "")
 
@@ -61,6 +62,7 @@ menu2 = """
 
 
 update = """
+
 КОМАНДЫ ДЛЯ ОБНОВЛЕНИЯ LIKROOT
 
 cd
@@ -73,13 +75,14 @@ python LIKROOT.py
 
 
 
-print (Fore.WHITE + logo)
+#print (Fore.WHITE + logo)
+print (Style.BRIGHT + logo)
     
 print (Fore.CYAN + "[=] Developer: RESHETKA")
 print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 
 print (Fore.YELLOW + menu)
-us = input(Fore.CYAN + "[+] Выбирай>")
+us = input(Fore.RED + "[+] Выбирай>")
 
 
 if us == "+":
