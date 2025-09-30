@@ -14,8 +14,28 @@
 
 ## ▌Установка
 
-##### git clone https://github.com/Andrey16016/LIKROOT.git
-##### Библиотеки: requests, colorama
+### Termux:
+pkg install python -y
+pkg install git -y
+git clone https://github.com/Andrey16016/LIKROOT
+pip install colorama
+pip install requests
+
+### ISH SHELL:
+apk add python3 -y
+apk add git -y
+git clone https://github.com/Andrey16016/LIKROOT
+apk add py3-pip
+pip install requests
+pip install colorama
+
+### Запуск:
+cd LIKROOT
+python3 LIKROOT.py
+
+## Лицензия
+#### [License](https://raw.githubusercontent.com/Andrey16016/LIKROOT/main/LICENSE)
+
 
 ## ▌Контакты:
 
