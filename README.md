@@ -14,7 +14,7 @@
 
 ## ▌Установка
 
-#####git clone https://github.com/Andrey16016/LIKROOT.git
+##### git clone https://github.com/Andrey16016/LIKROOT.git
 ##### Библиотеки: requests, colorama
 
 ## ▌Контакты:
