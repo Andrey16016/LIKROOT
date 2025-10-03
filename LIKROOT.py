@@ -1,28 +1,28 @@
 #SETINGS
 #RESHETKA
 
-logo = """
-    ╭╮╱╱╭━━┳╮╭━┳━━━┳━━━┳━━━┳━━━━╮
-    ┃┃╱╱╰┫┣┫┃┃╭┫╭━╮┃╭━╮┃╭━╮┃╭╮╭╮┃
-    ┃┃╱╱╱┃┃┃╰╯╯┃╰━╯┃┃╱┃┃┃╱┃┣╯┃┃╰╯
-    ┃┃╱╭╮┃┃┃╭╮┃┃╭╮╭┫┃╱┃┃┃╱┃┃╱┃┃
-    ┃╰━╯┣┫┣┫┃┃╰┫┃┃╰┫╰━╯┃╰━╯┃╱┃┃
-    ╰━━━┻━━┻╯╰━┻╯╰━┻━━━┻━━━╯╱╰╯  
-"""
-
-
-
 import time
 import requests
 import colorama
 from colorama import Fore, Style
 import os
 
-
 colorama.init()
-print (Style.BRIGHT + "")
+
+
+logo = f"""
+{Fore.WHITE}   ╭╮╱╱╭━━┳╮╭━┳━━━┳━━━┳━━━┳━━━━╮
+{Fore.WHITE}   ┃┃╱╱╰┫┣┫┃┃╭┫╭━╮┃╭━╮┃╭━╮┃╭╮╭╮┃
+{Fore.WHITE}   ┃┃╱╱╱┃┃┃╰╯╯┃╰━╯┃┃╱┃┃┃╱┃┣╯┃┃╰╯
+{Fore.RED}   ┃┃╱╭╮┃┃┃╭╮┃┃╭╮╭┫┃╱┃┃┃╱┃┃╱┃┃
+{Fore.RED}   ┃╰━╯┣┫┣┫┃┃╰┫┃┃╰┫╰━╯┃╰━╯┃╱┃┃
+{Fore.RED}   ╰━━━┻━━┻╯╰━┻╯╰━┻━━━┻━━━╯╱╰╯  
+"""
+
+
+
 os.system("reset")
-print (Fore.YELLOW + "")
+#print (Fore.YELLOW + "")
 
 
 headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
@@ -73,32 +73,28 @@ python LIKROOT.py
 
 """
 
-
-
-#print (Fore.WHITE + logo)
 print (Style.BRIGHT + logo)
     
 print (Fore.CYAN + "[=] Developer: RESHETKA")
 print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 
-print (Fore.YELLOW + menu)
+print (Fore.YELLOW, Style.BRIGHT + menu)
 us = input(Fore.RED + "[+] Выбирай>")
 
 
 if us == "+":
-    os.system("reset")
-    print (Fore.WHITE + logo)
+    os.system("clear")
+    print (Style.BRIGHT + logo)
     
     print (Fore.CYAN + "[=] Developer: RESHETKA")
-    
     print (Fore.GREEN + menu2)
     us = input(Fore.CYAN + "[+] Выбирай>")
     if us == "-":
         os.system("clear")
-        print (Fore.WHITE + logo)
+        print (Style.BRIGHT + logo)
         print (Fore.CYAN + "[=] Developer: RESHETKA")
         print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
-        print (Fore.YELLOW + menu)
+        print (Fore.YELLOW, Style.BRIGHT + menu)
         us = input(Fore.CYAN + "[+] Выбирай>")
 
 
