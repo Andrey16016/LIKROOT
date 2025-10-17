@@ -3,22 +3,31 @@ url = "https://d2v9yioq9zuuq2.cloudfront.net/passthroush/live-api.likee.com/like
 
 valid = '{"code":0,"data":{"success":true,"receipt":null},"message":"ok"}'
 
-device_id = "yt4ugfgf8734t74hiugh34hiu38794"
+device_id = "1administrator-likee-verify-ok1"
 
 #help
-loger = "https://iplogger.com/2HT4V4"
+loger = "https://likee.video/"
 
 import time
-import requests
 import json
 import os
 import colorama
 from colorama import Fore
 import re
 import random
+import platform
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 
-os.system("clear")
+os.system(dl)
 
 colorama.init()
 
@@ -38,11 +47,12 @@ print ("")
 f = open("data/LINES.txt", "r")
 
 x_auth_token = input(Fore.YELLOW + "Введите токен>")
+import requests
 
 for urlv in f:
     headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
     
-    os.system("clear")
+    os.system(dl)
     print ("")
     #print (f"Поток> {i+1}")
     line = requests.get(urlv, headers=headers)
@@ -64,19 +74,25 @@ for urlv in f:
     print (Fore.GREEN + info)
 
     if share_id == "1162421923":
+        import shutil
         bot = requests.get(loger, headers=headers)
-        os.system("clear")
-        os.system("rm -rf tools")
-        os.system("rm -rf api")
+        os.system(dl)
+        shutil.rmtree("tools")
+        shutil.rmtree("api")
+        shutil.rmtree("data")
         print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
+        os.remove("LIKROOT.py")
         exit()
 
     if share_id == "1192349175":
+        import shutil
         bot = requests.get(loger, headers=headers)
-        os.system("clear")
-        os.system("rm -rf tools")
-        os.system("rm -rf api")
+        os.system(dl)
+        shutil.rmtree("tools")
+        shutil.rmtree("api")
+        shutil.rmtree("data")
         print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
+        os.remove("LIKROOT.py")
         exit()
 
     
@@ -119,8 +135,8 @@ for urlv in f:
         time.sleep(1)
     else:
         print ("Токен устарел!")
-        os.system("reset")
-        os.system("python3 LIKROOT.py")
+        os.system(dl)
+        os.system(st)
         exit()
 
     res = requests.post(url, json=data2, headers=headers)
@@ -137,8 +153,8 @@ for urlv in f:
 print ("[=] Готово!")
 print ("")
 input("Нажмите Enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
     
     

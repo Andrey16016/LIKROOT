@@ -1,4 +1,3 @@
-#SETINGS
 #RESHETKA
 
 import time
@@ -6,6 +5,7 @@ import requests
 import colorama
 from colorama import Fore, Style
 import os
+import platform
 
 colorama.init()
 
@@ -20,9 +20,18 @@ logo = f"""
 """
 
 
+#-------------------------------------------
 
-os.system("reset")
-#print (Fore.YELLOW + "")
+if platform.system() == "Windows": 
+    os.system("title [+] LIKROOT")
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+#-------------------------------------------
 
 
 headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
@@ -53,6 +62,7 @@ menu2 = """
     {+} 12. FINDER
     {+} 13. KILL SOFT
     {+} 14. Обновить ПО
+    {+} 15. CRASHER
     
 
     [=] -. Страница 1
@@ -65,11 +75,15 @@ update = """
 
 КОМАНДЫ ДЛЯ ОБНОВЛЕНИЯ LIKROOT
 
-cd
-rm -rf LIKROOT
-git clone https://github.com/Andrey16016/LIKROOT
-cd LIKROOT
-python LIKROOT.py
+Для Linux:
+Скопируйте и вставьте эту команду:
+
+cd && rm -rf LIKROOT && git clone https://github.com/Andrey16016/LIKROOT && cd LIKROOT && python3 LIKROOT.py
+
+Для Windows:
+Просто переустановите софт.
+
+https://github.com/Andrey16016/LIKROOT
 
 """
 
@@ -83,14 +97,14 @@ us = input(Fore.RED + "[+] Выбирай>")
 
 
 if us == "+":
-    os.system("clear")
+    os.system(dl)
     print (Style.BRIGHT + logo)
     
     print (Fore.CYAN + "[=] Developer: RESHETKA")
     print (Fore.GREEN + menu2)
     us = input(Fore.CYAN + "[+] Выбирай>")
     if us == "-":
-        os.system("clear")
+        os.system(dl)
         print (Style.BRIGHT + logo)
         print (Fore.CYAN + "[=] Developer: RESHETKA")
         print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
@@ -133,39 +147,50 @@ if us == "11":
     from tools import antiban
 
 if us == "13":
-    os.system("rm -rf tools")
-    os.system("rm -rf api")
-    os.system("clear")
+    import shutil
+    shutil.rmtree("tools")
+    shutil.rmtree("api")
+    shutil.rmtree("data")
+    os.system(dl)
+    os.remove("LIKROOT.py")
     exit()
 
 if us == "12":
     from api import finder
 
 if us == "14":
-    os.system("clear")
+    os.system(dl)
     print ("")
-    print (update)
+    print (Fore.YELLOW + update)
+    if platform.system() == "Windows": 
+        input("Нажмите Enter")
+        os.system(dl)
+        os.system(st)
+    
     exit()
+
+if us == "15":
+    from tools import crasher
     
 #soft
 if us =="5":
     print (Fore.YELLOW + "")
-    os.system("clear")
+    os.system(dl)
     print (logo)
     print("")
     with open("data/info", 'r', encoding='utf-8') as f:
         texts = f.readlines()
     for i in texts:
         time.sleep(0.01)
-        print(i, end='', flush=True)
+        print(Fore.YELLOW + i, end='', flush=True)
     
         #ето пиздец
     input("Нажмите Enter")
-    os.system("reset")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
 
 else:
-    os.system("reset")
+    os.system(dl)
     print ("Выход из программы...")
     exit()
 

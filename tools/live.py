@@ -13,12 +13,23 @@ import requests
 import time
 import colorama
 from colorama import Fore
+import platform
 
+colorama.init()
 
 
 import os
 
-os.system("clear")
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
+os.system(dl)
 
 print (logo)
 print ("")
@@ -33,7 +44,7 @@ print ("{=} Получаем информацию...")
 res = requests.get(url)
 data = (res.text)
 
-os.system("clear")
+os.system(dl)
 print ("")
 
 import re
@@ -122,6 +133,6 @@ for key, value in data_dict.items():
 
 print ("")
 input("Нажмите enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()

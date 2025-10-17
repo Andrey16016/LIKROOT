@@ -1,16 +1,15 @@
-
-
-
+#RESHETKA
 
 import os
 import time
 import random
 import colorama
 from colorama import Fore
+import platform
 
 colorama.init()
 
-os.system("clear")
+
 print ("")
 
 body = """
@@ -22,7 +21,21 @@ body = """
 ╰╯╱╰┻╯╱╰━╯╱╰╯╱╰━━┻━━━┻╯╱╰┻╯╱╰━╯
 """
 
+
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
 print (Fore.WHITE + body)
+
+
+
 
 #HELLO IDI NAHUI
 
@@ -41,7 +54,7 @@ print ("")
 ban = input("Выбирай>")
 
 likee = input("LIKEE ID АККАУНТА>")
-os.system("clear")
+os.system(dl)
 
 text1 = f"""
 Здравствуйте!
@@ -79,7 +92,7 @@ LIKEE ID Заблокированого аккаунта {likee}
 Спасибо за Внимание.
 """
 
-os.system("clear")
+os.system(dl)
 print ("Жалобы подходят для email и клиентских апелляций")
 print ("")
 
@@ -88,8 +101,8 @@ if ban == "1":
     print (text1)
     print ("")
     i = input("Нажмите Enter")
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 if ban == "2":
@@ -97,8 +110,8 @@ if ban == "2":
     print(text2)
     print ("")
     i = input("Нажмите Enter")
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 if ban == "3":
@@ -106,8 +119,8 @@ if ban == "3":
     print (text3)
     print ("")
     i = input("Нажмите Enter")
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 if ban == "4":
@@ -115,8 +128,13 @@ if ban == "4":
     print (text4)
     print ("")
     i = input("Нажмите Enter")
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
+    exit()
+
+else:
+    os.system(dl)
+    os.system(st)
     exit()
 
 #hefvijhwevhwhehtrw

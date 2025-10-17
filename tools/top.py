@@ -8,6 +8,17 @@ from colorama import Fore
 import os
 import re
 import json
+import platform
+
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 
 logo = """
@@ -19,7 +30,7 @@ logo = """
 ┗┛┗━┻━━━┻┛┗━┻━━━┻┛┗┛┗┻━━━┻┛╋┗━┻━━━┛
 """
 
-os.system("clear")
+os.system(dl)
 print ("")
 print (Fore.GREEN + logo)
 print ("")
@@ -45,8 +56,8 @@ print ("")
 print (mn)
 us = input("[=] Выбирай>")
 if us == "2":
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 
@@ -75,8 +86,8 @@ for match in matches:
 
 print ("")
 input("Нажмите Enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
 
 

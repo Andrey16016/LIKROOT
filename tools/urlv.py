@@ -16,11 +16,22 @@ import os
 import colorama
 from colorama import Fore
 import re
+import platform
 
 colorama.init()
 
 
-os.system("clear")
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
+
+os.system(dl)
 headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.3'}
 
 
@@ -38,11 +49,11 @@ print ("")
 us = input(Fore.CYAN + "[=] Выбтрай>")
 #print (Fore.YELLOW + "")
 if us == "2":
-    os.system("clear")
+    os.system(dl)
     print ("")
     print ("Заполните файл LINES в папке data")
     input("Нажмите Enter для запуска")
-    os.system("clear")
+    os.system(dl)
     f = open("data/LINES.txt")
     for line in f:
         res = requests.get(line, headers=headers)
@@ -58,15 +69,15 @@ if us == "2":
             with open(file_Path, 'wb') as file:
                 file.write(response.content)
                 print(Fore.GREEN + 'Видео скачено и сохранено в папку videos')
-                os.system("clear")
+                os.system(dl)
                 print ("Скачивание следущего видео!...")
                 
         else:
             print(Fore.RED + 'Ошибка!')
     print ("")
     input("Нажмите Enter")
-    os.system("reset")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
         
         

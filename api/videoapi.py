@@ -11,10 +11,20 @@ import colorama
 from colorama import Fore
 import os
 import re
+import platform
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 
 colorama.init()
-os.system("clear")
+
 print (Fore.GREEN + "")
 
 print ("{+} Достает данные о видеороликах пользователя {+}")
@@ -30,8 +40,8 @@ def get_user_video(uid):
         print (Fore.RED + e)
         print (Fore.YELLOW + "")
         input("Нажмите Enter")
-        os.system("reset")
-        os.system("python3 LIKROOT.py")
+        os.system(dl)
+        os.system(st)
         exit()
     return response.json()
    
@@ -44,7 +54,7 @@ videos = get_user_video(uid)
 baza = (json.dumps(videos, indent=2))
 #print (baza)
 
-os.system("clear")
+os.system(dl)
 print("")
 mn = """
 [=] РАСПАРСИТЬ ОТДЕЛЬНЫЕ ЗНАЧЕНИЯ? [=]
@@ -61,7 +71,7 @@ if us == "+":
     name = input("Переменная>")
     matches = re.findall(fr'"{name}":\s*"([^"]*)"', baza)
     if matches:
-        os.system("clear")
+        os.system(dl)
         print ("")
         for match in matches:
             print(f"{match}")
@@ -70,8 +80,8 @@ if us == "+":
         print (matches)
     print ("")
     input("Нажмите Enter")
-    os.system("clear")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
     
     
@@ -84,8 +94,8 @@ for i in baza:
 
 print (Fore.YELLOW + "")
 input("Нажмите enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
 
 

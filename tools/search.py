@@ -1,10 +1,6 @@
 print ("")
 import os
 
-os.system("clear")
-
-
-
 logo = """
 ╭╮╭┳━━┳━━┳━╮
 ┃┃┃┃━━┫┃━┫╭╯
@@ -15,6 +11,16 @@ logo = """
 #hello world
 #RESHETKA
 #RAZVEDKA
+
+import platform
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 
 
@@ -66,17 +72,17 @@ if found:
     for f in found:
         print(f)
     i = input("Нажмите enter")
-    os.system("clear")
+    os.system(dl)
     #ok
-    os.system("python3 LIKROOT.py")
+    os.system(st)
     exit()
 else:
     print(Fore.RED + "[-]Профили не найдены.")
     print ("")
     input("Нажмите enter")
-    os.system("reset")
+    os.system(dl)
     #ok
-    os.system("python3 LIKROOT.py")
+    os.system(st)
     exit()
 
 

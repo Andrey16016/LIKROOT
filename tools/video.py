@@ -14,10 +14,21 @@ import os
 import colorama
 from colorama import Fore
 import re
+import platform
+
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
 
 colorama.init()
 
-os.system("clear")
+os.system(dl)
 print ("")
 print (logo)
 print ("")
@@ -32,7 +43,7 @@ print (Fore.YELLOW + "")
 
 url = input("URL VIDEO>")
 
-os.system("clear")
+os.system(dl)
 print ("")
 print ("Данные:")
 
@@ -41,8 +52,8 @@ try:
 except requests.ConnectionError as e:
     print(Fore.RED + e)
     input(Fore.YELLOW + "Нажмите Enter")
-    os.system("reset")
-    os.system("python3 LIKROOT.py")
+    os.system(dl)
+    os.system(st)
     exit()
 
 
@@ -100,9 +111,9 @@ print (Fore.GREEN + "")
 print(f"Информация: {share_text}")
 
 input("Нажмите enter")
-os.system("reset")
+os.system(dl)
 #ok
-os.system("python3 LIKROOT.py")
+os.system(st)
 exit()
 
 

@@ -20,10 +20,19 @@ import time
 import os
 import colorama
 from colorama import Fore
+import platform
 
 colorama.init()
 
-os.system("clear")
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
 
 mn = f"""
 {Fore.GREEN}
@@ -36,7 +45,7 @@ print (logo)
 print (mn)
 
 us = input("Выбирай>")
-os.system("clear")
+os.system(dl)
 
 if us == "1":
     file_name = 'data/baza'
@@ -53,11 +62,11 @@ if us == "1":
     print ("2) Начать поиск по базе")
     us = input("Выбирай>")
     if us == "1":
-        os.system("reset")
-        os.system("python3 LIKROOT.py")
+        os.system(dl)
+        os.system(st)
         exit()
     else:
-        os.system("clear")
+        os.system(dl)
         
         
     
@@ -92,8 +101,8 @@ else:
 
 print ("")
 input("Нажмите Enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
 #di naxyi
 

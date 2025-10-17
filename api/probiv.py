@@ -17,8 +17,18 @@ import os
 import colorama
 from colorama import Fore
 import time
+import platform
 
-os.system("clear")
+
+if platform.system() == "Windows":
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
 
 colorama.init()
 
@@ -41,7 +51,7 @@ likee_id = input("Введите UserName>")
 profile_data = get_profile_detail(likee_id)
 
 if profile_data:
-    os.system("clear")
+    os.system(dl)
     print (Fore.YELLOW + "Найденные данные:")
     print ("")
     baza = (json.dumps(profile_data, indent=4, ensure_ascii=False))
@@ -53,8 +63,8 @@ else:
 
 print ("")
 input("Нажмите enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
 
 
