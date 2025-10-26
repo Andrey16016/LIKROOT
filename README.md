@@ -18,14 +18,14 @@
 
 ### Termux:
 - pkg install python -y
-- pkg install git -y
+- pkg install git
 - git clone https://github.com/Andrey16016/LIKROOT
 - pip install colorama
 - pip install requests
 
 ### ISH SHELL:
 - apk add python3 -y
-- apk add git -y
+- apk add git
 - git clone https://github.com/Andrey16016/LIKROOT
 - apk add py3-pip
 - pip install requests
