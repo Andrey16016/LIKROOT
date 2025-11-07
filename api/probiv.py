@@ -52,7 +52,7 @@ profile_data = get_profile_detail(likee_id)
 
 if profile_data:
     os.system(dl)
-    print (Fore.YELLOW + "Найденные данные:")
+    print (Fore.YELLOW + "Данные JSON:")
     print ("")
     baza = (json.dumps(profile_data, indent=4, ensure_ascii=False))
     for i in baza:

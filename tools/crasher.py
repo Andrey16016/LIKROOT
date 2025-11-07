@@ -89,7 +89,7 @@ def create_big_png(filename, width, height):
         f.write(iend_chunk)
 
 
-create_big_png("big_empty.png", int(hx), int(hy))
+create_big_png("crash.png", int(hx), int(hy))
 
 
 

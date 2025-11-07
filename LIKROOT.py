@@ -71,16 +71,16 @@ menu2 = """
 """
 
 
-update = """
+update = f"""
 
 КОМАНДЫ ДЛЯ ОБНОВЛЕНИЯ LIKROOT
 
 Для Linux:
 Скопируйте и вставьте эту команду:
 
-cd && rm -rf LIKROOT && git clone https://github.com/Andrey16016/LIKROOT && cd LIKROOT && python3 LIKROOT.py
+{Fore.BLUE}cd && rm -rf LIKROOT && git clone https://github.com/Andrey16016/LIKROOT && cd LIKROOT && python3 LIKROOT.py
 
-Для Windows:
+{Fore.YELLOW}Для Windows:
 Просто переустановите софт.
 
 https://github.com/Andrey16016/LIKROOT
@@ -101,6 +101,7 @@ if us == "+":
     print (Style.BRIGHT + logo)
     
     print (Fore.CYAN + "[=] Developer: RESHETKA")
+    print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
     print (Fore.GREEN + menu2)
     us = input(Fore.CYAN + "[+] Выбирай>")
     if us == "-":
@@ -171,6 +172,9 @@ if us == "14":
 
 if us == "15":
     from tools import crasher
+
+if us == "sessions":
+    from api import likee_sessions
     
 #soft
 if us =="5":
