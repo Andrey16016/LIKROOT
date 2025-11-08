@@ -57,7 +57,6 @@ menu = """
 
 menu2 = """
     ----------------------------------
-    {+} 10. MASS SNOSER
     {+} 11. ANTIBAN
     {+} 12. FINDER
     {+} 13. KILL SOFT
@@ -141,8 +140,6 @@ if us == "9":
 if us == "avtosnos":
     from api import snosv2
 
-if us == "10":
-    from api import mass_snos
 
 if us == "11":
     from tools import antiban
@@ -199,7 +196,7 @@ else:
     exit()
 
 
-
+exit()
 
 
 

@@ -125,7 +125,7 @@ for match in pattern.finditer(data):
 #dsdd\
 
 input("Нажмите enter")
-os.system("reset")
-os.system("python3 LIKROOT.py")
+os.system(dl)
+os.system(st)
 exit()
 
