@@ -59,6 +59,12 @@ if 2>1:
             lines = fl.readlines()
         token = random.choice(lines).strip()
         fl.close()
+
+        with open("data/user_agent", "r", encoding='utf-8') as fl:
+            lines = fl.readlines()
+        bot = random.choice(lines).strip()
+        fl.close()
+            
             
             
 
@@ -77,7 +83,8 @@ if 2>1:
 
         headers = {
             "content-type": "application/json",
-            "x-auth-token": token
+            "x-auth-token": token,
+            "User-Agent": bot
         }
 
         res = requests.post(url, json=data1, headers=headers)
@@ -86,6 +93,10 @@ if 2>1:
         else:
             print(Fore.RED + "Сервер не принял запрос")
             print(res.text)
+            input("Нажмите Enter")
+            os.system(dl)
+            os.system(st)
+            
         itog = f'''
 
 {Fore.GREEN}URL> {url_report}
