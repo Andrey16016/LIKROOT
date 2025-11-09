@@ -10,6 +10,20 @@ logo = '''
 '''
 
 
+menu = '''
+
+ [1] Mass_Snoser
+ [2] Avtosnos
+ 
+'''
+print (menu)
+us = input("Выбирай>")
+
+if us == "1":
+    from api import mass_snos
+    exit()
+
+
 
 import os
 import requests
@@ -43,13 +57,19 @@ url = "https://api.like-video.com/likee-activity-flow-micro/feedback/submit"
 
 url_report = input("Введите URL>")
 
-file = open("data/suport", "r", encoding='utf-8')
+kol = input("Кол-во Репортов>")
+
 
 if 2>1:
-    for line in file:
-        suport = (line)
-        host = random.randint(1111111, 999999999999999)
-        emails = (str(host) + "@gmail.com")
+    for i in range(int(kol)):
+        with open("data/suport", "r", encoding='utf-8') as fl:
+            lines = fl.readlines()
+        suport = random.choice(lines)
+        fl.close()
+
+        
+        emails = (''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(random.randint(9, 14))) + '@gmail.com')
+        
         with open("data/fio.txt", "r", encoding='utf-8') as fl:
             lines = fl.readlines()
         fio = random.choice(lines)
@@ -96,6 +116,7 @@ if 2>1:
             input("Нажмите Enter")
             os.system(dl)
             os.system(st)
+        os.system(dl)
             
         itog = f'''
 

@@ -57,9 +57,7 @@ menu = """
 
 menu2 = """
     ----------------------------------
-    {+} 11. ANTIBAN
     {+} 12. FINDER
-    {+} 13. KILL SOFT
     {+} 14. Обновить ПО
     {+} 15. CRASHER
     
@@ -141,20 +139,10 @@ if us == "avtosnos":
     from api import snosv2
 
 
-if us == "11":
-    from tools import antiban
-
-if us == "13":
-    import shutil
-    shutil.rmtree("tools")
-    shutil.rmtree("api")
-    shutil.rmtree("data")
-    os.system(dl)
-    os.remove("LIKROOT.py")
-    exit()
 
 if us == "12":
     from api import finder
+
 
 if us == "14":
     os.system(dl)
