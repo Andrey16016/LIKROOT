@@ -87,7 +87,7 @@ https://github.com/Andrey16016/LIKROOT
 print (Style.BRIGHT + logo)
     
 print (Fore.CYAN + "[=] Developer: RESHETKA")
-print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
+#print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 
 print (Fore.YELLOW, Style.BRIGHT + menu)
 us = input(Fore.RED + "[+] Выбирай>")
@@ -98,7 +98,7 @@ if us == "+":
     print (Style.BRIGHT + logo)
     
     print (Fore.CYAN + "[=] Developer: RESHETKA")
-    print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
+    #print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
     print (Fore.GREEN + menu2)
     us = input(Fore.CYAN + "[+] Выбирай>")
     if us == "-":
