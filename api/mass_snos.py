@@ -20,6 +20,7 @@ import string
 import random
 import time
 import platform
+from threading import Thread
 
 
 colorama.init()
@@ -33,6 +34,16 @@ else:
     dl = "clear"
     st = "python3 LIKROOT.py"
     os.system("clear")
+
+
+menu = """
+
+ [1] Обычная атака
+ [2] Атака потоками
+ [3] Выход
+
+"""
+
 
 os.system(dl)
 print (Fore.RED + logo)
@@ -53,8 +64,11 @@ else:
 
 
 
-input("Start SNOSING > ENTER")
-print ("[=]Начинаем Атаку")
+
+print (Fore.YELLOW + menu)
+us = input("Выбирай>")
+#input("Start SNOSING > ENTER")
+#print ("[=]Начинаем Атаку")
 
 valid = '{"code":0,"data":null,"message":null}'
 
@@ -64,7 +78,7 @@ url = "https://api.like-video.com/likee-activity-flow-micro/feedback/submit"
 
 video = open("data/LINES.txt", "r", encoding='utf-8')
 #with open("LINES.txt", "r", encoding='utf-8') as video:
-if 2>1:
+def botnet():
     for line in video:
         url_report = line.strip()
 
@@ -117,7 +131,7 @@ if 2>1:
                 input("Нажмите Enter")
                 os.system(dl)
                 os.system(st)
-            os.system(dl)
+            #os.system(dl)
             itog = f'''
 {Fore.GREEN}URL> {url_report}
 {Fore.WHITE}Email> {emails}
@@ -126,8 +140,34 @@ if 2>1:
 {Fore.YELLOW}Token> {token}
 {Fore.GREEN}Status> {res.text}
 '''
-            print (itog)
-            time.sleep(0.19)
+            if us == "2":
+                print(f"Botnet: {emails}")
+            else:
+                print (itog)
+            
+            time.sleep(0.01)
+
+
+if us == "1":
+    botnet()
+    
+if us == "2":
+    bots = 6
+    os.system(dl)
+    print ("")
+    print ("При атаке потоками есть шанс словить перегруз сети!")
+    input("Нажмите Enter Для начала Атаки")
+    for i in range(int(bots)):
+        thr = Thread(target = botnet)
+        thr.start()
+        print (f"Запущен Поток> {i+1}")
+    time.sleep(1)
+    os.system(dl)
+
+else:
+    os.system(dl)
+    os.system(st)
+    exit()
 
         
         
