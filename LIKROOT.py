@@ -38,33 +38,22 @@ headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 
 
 
 menu = """
-    ----------------------------------
-    {+} 1. Скачать видео
-    {+} 2. Информация о трансляции
-    {+} 3. Информация о видео
-    {+} 4. Продвижение в рекомендации
-    {+} 5. Информация о софте
-    {+} 7. Поиск по username
-    {+} 8. Данные о видео из аккаунта
-    {+} 9. Информация об аккаунте
-    
-    [=] +. Страница 2
-    [=] 0. Выход
-    ----------------------------------
+  -------------MENU----------------
+ |{+} 1. Скачать видео             |
+ |{+} 2. Информация о трансляции   |
+ |{+} 3. Информация о видео        |
+ |{+} 4. Продвижение в рекомендации|
+ |{+} 5. Информация о софте        |
+ |{+} 7. Поиск по username         |
+ |{+} 8. Данные о видео из аккаунта|
+ |{+} 9. Информация об аккаунте    |
+ |{+} S. Обновить                  |
+ |{+} F. Блокировщик входа         |
+ |                                 |
+ |[=] 0. Выход                     |
+  ---------------------------------
 """
 
-
-menu2 = """
-    ----------------------------------
-    {+} 12. FINDER
-    {+} 14. Обновить ПО
-    {+} 15. CRASHER
-    
-
-    [=] -. Страница 1
-    [=] 0. Выход
-    ----------------------------------
-"""
 
 
 update = f"""
@@ -92,21 +81,21 @@ print (Fore.YELLOW, Style.BRIGHT + menu)
 us = input(Fore.RED + "[+] Выбирай>")
 
 
-if us == "+":
-    os.system(dl)
-    print (Style.BRIGHT + logo)
+#if us == "+":
+#    os.system(dl)
+#    print (Style.BRIGHT + logo)
     
-    print (Fore.CYAN + "[=] Developer: RESHETKA")
-    print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
-    print (Fore.GREEN + menu2)
-    us = input(Fore.CYAN + "[+] Выбирай>")
-    if us == "-":
-        os.system(dl)
-        print (Style.BRIGHT + logo)
-        print (Fore.CYAN + "[=] Developer: RESHETKA")
-        print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
-        print (Fore.YELLOW, Style.BRIGHT + menu)
-        us = input(Fore.CYAN + "[+] Выбирай>")
+#    print (Fore.CYAN + "[=] Developer: RESHETKA")
+#    print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
+#    print (Fore.GREEN + menu2)
+#    us = input(Fore.CYAN + "[+] Выбирай>")
+#    if us == "-":
+#        os.system(dl)
+#        print (Style.BRIGHT + logo)
+#        print (Fore.CYAN + "[=] Developer: RESHETKA")
+#        print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
+#        print (Fore.YELLOW, Style.BRIGHT + menu)
+#        us = input(Fore.CYAN + "[+] Выбирай>")
 
 
 
@@ -132,12 +121,12 @@ if us == "7":
 if us == "9":
     from api import probiv
 
+if us == "F":
+    from api import block_phone
 
-if us == "12":
-    from api import finder
 
 
-if us == "14":
+if us == "S":
     os.system(dl)
     print ("")
     print (Fore.YELLOW + update)
@@ -148,8 +137,6 @@ if us == "14":
     
     exit()
 
-if us == "15":
-    from tools import crasher
 
 if us == "sessions":
     from api import likee_sessions
@@ -165,6 +152,23 @@ if us =="5":
     for i in texts:
         time.sleep(0.01)
         print(Fore.YELLOW + i, end='', flush=True)
+    print("Загрузка...")
+    public_ip = requests.get('https://api.ipify.org?format=text').text.strip()
+    ip_info = requests.get(f'https://ipinfo.io/{public_ip}/json').json()
+    print("")
+    itog = f"""
+--- ИНФОРМАЦИЯ О ВАС ---
+
+IP: {public_ip}\n
+Страна: {ip_info['country']}
+Город: {ip_info['city']}
+Регион: {ip_info['region']}
+Местоположение (Lat/Lon): {ip_info['loc']}
+Организация (ISP): {ip_info['org']}
+Часовой пояс: {ip_info['timezone']}
+"""
+    print(Fore.GREEN + itog)
+    
     
         #ето пиздец
     input("Нажмите Enter")
