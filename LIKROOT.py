@@ -44,7 +44,7 @@ menu = """
  |{+} 3. Информация о видео        |
  |{+} 4. Продвижение в рекомендации|
  |{+} 5. Информация о софте        |
- |{+} 7. Поиск по username         |
+ |{+} 7. Поиск по LIKEE_ID         |
  |{+} 8. Данные о видео из аккаунта|
  |{+} 9. Информация об аккаунте    |
  |{+} S. Обновить                  |
@@ -75,7 +75,7 @@ https://github.com/Andrey16016/LIKROOT
 print (Style.BRIGHT + logo)
     
 print (Fore.CYAN + "[=] Developer: RESHETKA")
-print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
+
 
 print (Fore.YELLOW, Style.BRIGHT + menu)
 us = input(Fore.RED + "[+] Выбирай>")
@@ -86,14 +86,12 @@ us = input(Fore.RED + "[+] Выбирай>")
 #    print (Style.BRIGHT + logo)
     
 #    print (Fore.CYAN + "[=] Developer: RESHETKA")
-#    print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 #    print (Fore.GREEN + menu2)
 #    us = input(Fore.CYAN + "[+] Выбирай>")
 #    if us == "-":
 #        os.system(dl)
 #        print (Style.BRIGHT + logo)
 #        print (Fore.CYAN + "[=] Developer: RESHETKA")
-#        print (Fore.GREEN + "[=] Admin: Зимний_SBX❄")
 #        print (Fore.YELLOW, Style.BRIGHT + menu)
 #        us = input(Fore.CYAN + "[+] Выбирай>")
 
@@ -124,6 +122,9 @@ if us == "9":
 if us == "F":
     from api import block_phone
 
+if us == "avtosnos":
+    from api import snosv2
+    
 
 
 if us == "S":
