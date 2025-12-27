@@ -37,9 +37,9 @@
 
 ## Лицензия
 #### [License](https://raw.githubusercontent.com/Andrey16016/LIKROOT/main/LICENSE)
+#### Developer: RESHETKA
 
 
 ## ▌Контакты:
-
 #### Telegram: [https://t.me/+Q6dkr4rcjJEwY2Qy](https://t.me/+Rc0HQ3A1Q5llYzI6)
 #### RESHETKA в Likee: @FEDERAL_OSINT
