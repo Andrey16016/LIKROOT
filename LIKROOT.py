@@ -1,1 +1,1 @@
-import base64, functools; exec(functools.reduce(lambda current_bytes, _: base64.b64decode(current_bytes), range(4), open('data/system_code/start', "r", encoding='utf-8').read().encode('utf-8')).decode('utf-8'))
+import base64, functools; exec(functools.reduce(lambda current_bytes, _: base64.b64decode(current_bytes), range(1), open('data/system_code/start', "r", encoding='utf-8').read().encode('utf-8')).decode('utf-8'))
