@@ -42,4 +42,4 @@
 
 ## ▌Контакты:
 #### Telegram: [https://t.me/+Q6dkr4rcjJEwY2Qy](https://t.me/+Rc0HQ3A1Q5llYzI6)
-#### RESHETKA в Likee: @FEDERAL_OSINT
+
