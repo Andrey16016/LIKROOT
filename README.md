@@ -13,6 +13,8 @@
 #### •  Получение информации о видео из аккаунта (JSON): Экспорт информации о всех видео, размещенных в определенном аккаунте, в формате JSON.
 #### •  Получение информации из аккаунта (JSON): Экспорт данных об аккаунте (количество подписчиков, информация о профиле) в формате JSON.
 #### •  Генератор сессий + чекер сессий
+#### •  Поиск групп
+#### •  Поиск аккаунтов с привязанными соцсетями
 
 ## ▌Установка
 
@@ -20,16 +22,14 @@
 - pkg install python 
 - pkg install git
 - git clone https://github.com/Andrey16016/LIKROOT
-- pip install colorama
-- pip install requests
+
 
 ### ISH SHELL:
 - apk add python3 
 - apk add git
 - git clone https://github.com/Andrey16016/LIKROOT
 - apk add py3-pip
-- pip install requests
-- pip install colorama
+
 
 ### Запуск:
 - cd LIKROOT
