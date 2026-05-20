@@ -39,11 +39,9 @@
 - cd LIKROOT
 - python3 LIKROOT.py
 
-## Лицензия
-#### [License](https://raw.githubusercontent.com/Andrey16016/LIKROOT/main/LICENSE)
-#### Developer: RESHETKA
-
 
 ## ▌Контакты:
 #### Telegram: [(https://t.me/+SUsx6idsYCphNzAy)]
+
+#### Developer: RESHETKA
 
