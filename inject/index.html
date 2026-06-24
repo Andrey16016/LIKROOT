@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIKROOT WEB</title>
+    <style>
+        body { background: #000; color: #00ff00; font-family: monospace; padding: 20px; margin: 0; }
+        .card { border: 1px solid #00ff00; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px #00ff00; }
+        h2 { color: #ff0050; margin: 0 0 10px 0; font-size: 16px; }
+        #log { font-size: 12px; height: 150px; overflow-y: auto; border-bottom: 1px solid #333; margin-bottom: 10px; }
+        textarea { width: 100%; height: 60px; background: #111; color: #00ff00; border: 1px solid #555; padding: 10px; box-sizing: border-box; font-family: monospace; }
+        button { background: #ff0050; color: #white; border: none; padding: 10px; width: 100%; margin-top: 10px; font-weight: bold; cursor: pointer; }
+        .success { color: #fff; font-weight: bold; background: #111; }
+        .found-item { color: #00f2ff; margin-bottom: 5px; border-left: 2px solid #ff0050; padding-left: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>📡 SYSTEM LOG</h2>
+        <div id="log">Ожидание команд...</div>
+    </div>
+
+    <div class="card">
+        <h2>🔍 GLOBAL SPY (Поиск объектов Likee)</h2>
+        <button onclick="spy()">ЗАПУСТИТЬ СКАНЕР ОБЪЕКТОВ</button>
+        <div id="found-objects" style="margin-top:10px;"></div>
+    </div>
+
+    <div class="card">
+        <h2>💻 JS EXECUTOR</h2>
+        <textarea id="cmd" placeholder="Введите код (например: Object.keys(window))"></textarea>
+        <button style="background: #007aff;" onclick="run()">ВЫПОЛНИТЬ</button>
+        <div id="result" class="success" style="margin-top:10px; word-break: break-all;"></div>
+    </div>
+
+    <script>
+        function log(msg) {
+            const l = document.getElementById('log');
+            l.innerHTML += `> ${msg}<br>`;
+            l.scrollTop = l.scrollHeight;
+        }
+
+        function run() {
+            const code = document.getElementById('cmd').value;
+            const resEl = document.getElementById('result');
+            try {
+                const res = eval(code);
+                resEl.textContent = "Result: " + JSON.stringify(res, null, 2);
+                log("Команда выполнена успешно");
+            } catch(e) {
+                resEl.textContent = "Error: " + e.message;
+                log("Ошибка: " + e.message);
+            }
+        }
+        function spy() {
+            log("Начинаю глубокое сканирование window...");
+            const foundContainer = document.getElementById('found-objects');
+            foundContainer.innerHTML = '';
+            
+            
+            const standard = ["window", "self", "document", "name", "location", "history", "customElements", "locationbar", "menubar", "personalbar", "scrollbars", "statusbar", "toolbar", "status", "closed", "frames", "length", "top", "opener", "parent", "frameElement", "navigator", "origin", "external", "screen", "innerWidth", "innerHeight", "scrollX", "pageXOffset", "scrollY", "pageYOffset", "visualViewport", "screenX", "screenY", "outerWidth", "outerHeight", "devicePixelRatio", "clientInformation", "screenLeft", "screenTop", "defaultStatus", "defaultstatus", "styleMedia", "onanimationiteration", "onanimationstart", "onanimationend", "onwebkitanimationiteration", "onwebkitanimationstart", "onwebkitanimationend", "ontransitionend", "onwebkittransitionend", "isSecureContext", "onabort", "onblur", "oncancel", "oncanplay", "oncanplaythrough", "onchange", "onclick", "onclose", "oncontextmenu", "oncuechange", "ondblclick", "ondrag", "ondragend", "ondragenter", "ondragleave", "ondragover", "ondragstart", "ondrop", "ondurationchange", "onemptied", "onended", "onerror", "onfocus", "oninput", "oninvalid", "onkeydown", "onkeypress", "onkeyup", "onload", "onloadeddata", "onloadedmetadata", "onloadstart", "onmousedown", "onmouseenter", "onmouseleave", "onmousemove", "onmouseout", "onmouseover", "onmouseup", "onmousewheel", "onpause", "onplay", "onplaying", "onprogress", "onratechange", "onreset", "onresize", "onscroll", "onseeked", "onseeking", "onselect", "onstalled", "onsubmit", "onsuspend", "ontimeupdate", "ontoggle", "onvolumechange", "onwaiting", "onwheel", "onauxclick", "ongotpointercapture", "onlostpointercapture", "onpointerdown", "onpointermove", "onpointerup", "onpointercancel", "onpointerover", "onpointerout", "onpointerenter", "onpointerleave", "onselectstart", "onselectionchange", "onrejectionhandled", "onunhandledrejection", "afterprint", "beforeprint", "beforeunload", "hashchange", "languagechange", "message", "messageerror", "offline", "online", "pagehide", "pageshow", "popstate", "rejectionhandled", "storage", "unhandledrejection", "unload", "performance", "stop", "open", "alert", "confirm", "prompt", "print", "requestAnimationFrame", "cancelAnimationFrame", "requestIdleCallback", "cancelIdleCallback", "captureEvents", "releaseEvents", "getComputedStyle", "matchMedia", "moveTo", "moveBy", "resizeTo", "resizeBy", "getSelection", "find", "getMatchedCSSRules", "webkitRequestAnimationFrame", "webkitCancelAnimationFrame", "atob", "btoa", "setTimeout", "clearTimeout", "setInterval", "clearInterval", "createImageBitmap", "fetch", "crypto", "webkitStorageInfo", "sessionStorage", "localStorage", "chrome"];
+
+            let count = 0;
+            for (let prop in window) {
+                if (!standard.includes(prop)) {
+                    count++;
+                    const type = typeof window[prop];
+                    const item = document.createElement('div');
+                    item.className = 'found-item';
+                    item.innerHTML = `<strong>${prop}</strong> (${type})`;
+                    
+                    
+                    if (type === 'object' && window[prop] !== null) {
+                        const keys = Object.keys(window[prop]).join(', ');
+                        if (keys) item.innerHTML += `<br><small style="color:#888">Методы: ${keys}</small>`;
+                    }
+                    
+                    foundContainer.appendChild(item);
+                }
+            }
+            
+            
+            if (window.webkit && window.webkit.messageHandlers) {
+                const handlers = Object.keys(window.webkit.messageHandlers);
+                const item = document.createElement('div');
+                item.className = 'found-item';
+                item.style.borderColor = '#007aff';
+                item.innerHTML = `<strong>window.webkit.messageHandlers</strong> (iOS Bridge)<br><small>Найдены: ${handlers.join(', ')}</small>`;
+                foundContainer.appendChild(item);
+                count++;
+            }
+
+            log(`Сканирование завершено. Найдено объектов: ${count}`);
+        }
+    </script>
+</body>
+</html>
