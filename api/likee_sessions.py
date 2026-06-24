@@ -72,7 +72,12 @@ def cheker():
             else:
                 print (Fore.GREEN + 'Cессия валидна')
                 print (f"Sesion> {token}")
-                input("Нажмите Enter для продолжения")
+                #input("Нажмите Enter для продолжения")
+                with open("data/valid_tokens.txt", "a", encoding='utf-8') as vld:
+                    vld.write(f"X-Auth-Token: {token} (VALID)" + "\n")
+                    vld.close()
+                    print(f"{Fore.RED}")
+        print()
         print ("Программа закончила работу")
         input("Нажмите Enter")
         os.system(dl)
@@ -90,8 +95,8 @@ def cheker():
 def session():
     print (Fore.YELLOW + "")
     input("Нажмите Enter чтобы начать генерацию")
-    prefix = "2aa1bUQAAA"
-    suffix_length = 92
+    prefix = "2aa1bUAAAA"
+    suffix_length = 93
     os.system(dl)
     kol = input("Кол-во>")
     with open("data/tokens.txt", "a", encoding='utf-8') as file:
